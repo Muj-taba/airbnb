@@ -1,0 +1,5 @@
+<h1>This is just an empty space for all hotel</h1>
+
+{% for hotel in all_hotels %}
+  <h1>  <a href="{% url 'airbnb:details' hotel.id %}"> {{hotel}}</a> <br> </h1> 
+{%endfor%}
