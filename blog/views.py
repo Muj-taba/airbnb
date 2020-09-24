@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Blog
+from .form import BlogForm
 
 # Create your views here.
 
@@ -16,7 +17,12 @@ def blog_details(request, id):
 
 
 def add_post(request):
-    pass
+    
+    if request.method=='POST':
+        pass
+    else:
+        form = BlogForm()
+    return render(request,'add.html',{'form':form})
 
 
 
