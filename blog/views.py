@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from .models import Blog
 from .form import BlogForm
+from django.urls import reverse
 
 # Create your views here.
 
@@ -19,12 +20,28 @@ def blog_details(request, id):
 def add_post(request):
     
     if request.method=='POST':
-        pass
+        form = BlogForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('blog:all_blog'))
+
     else:
         form = BlogForm()
     return render(request,'add.html',{'form':form})
 
 
+#
+#def edit_post(request, id ):
+ #   pass
+ #   edit_post = Blog.objects.get(id=id)
+  #  if request.method=='POST':
+   #     form = BlogForm(request.POST, request.FILES)
+    #    if form.is_valid():
+     #       form.save()
+      #      return redirect(reverse('blog:all_blog'))
 
-def edit_post(request):
-    pass
+
+   # else:
+    #    form = BlogForm(instance=edit_post)
+    #return render(request,'edit.html',{'form':form})
+
