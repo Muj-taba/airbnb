@@ -1,0 +1,15 @@
+<h1> this is home page for the the blog</h1>
+
+<a href="">add new post</a>
+
+<hr>
+
+<p>
+
+<hr>
+<h3>
+{%for post in all_post%}
+<a href="{% url 'blog:blog_detail' post.id %}"> {{post}}</a> <br>
+{%endfor%}
+
+</h3>

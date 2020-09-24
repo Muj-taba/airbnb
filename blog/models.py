@@ -15,5 +15,8 @@ class Blog(models.Model):
     active      = models.BooleanField(default=True)
     auther_mail = models.EmailField(default='')
     type        = models.CharField(choices=Type, max_length=30)
-    image       = models.ImageField(upload_to='media/')
+    image       = models.ImageField(upload_to='posts/')
+
+    def __str__(self):
+        return self.title
 
