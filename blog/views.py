@@ -3,5 +3,11 @@ from django.shortcuts import render
 # Create your views here.
 
 
-def blogz(request):
+def all_blog(request):
+    pass
+
+
+
+
+def blog_details(request):
     pass
