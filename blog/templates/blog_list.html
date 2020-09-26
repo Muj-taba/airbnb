@@ -1,0 +1,15 @@
+<h1> this is home page for the the blog</h1>
+
+<a href="{%url 'blog:add_post' %}">add new post</a>
+
+<hr>
+
+<p>
+
+<hr>
+<h3>
+{%for post in object_list%}
+<a href="{% url 'blog:DetailView_cbv' post.pk %}"> {{post}}</a> <br>
+{%endfor%}
+
+</h3>

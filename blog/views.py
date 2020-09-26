@@ -2,8 +2,29 @@ from django.shortcuts import render , redirect
 from .models import Blog
 from .form import BlogForm
 from django.urls import reverse
+from django.views.generic import ListView , DetailView
 
-# Create your views here.
+# class based view.
+
+class PostList(ListView):
+    model = Blog
+    template_name = 'blog_list.html'
+    
+
+class PostDetail(DetailView):
+    model = Blog
+    template_name = 'blog_detail.html'
+
+
+
+
+
+
+
+
+
+
+## function based view 
 
 
 def all_blog(request):

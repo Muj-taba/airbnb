@@ -1,0 +1,27 @@
+<h1> this is post details for the the blog</h1>
+
+<a href="{% url 'blog:all_blog' %}">get back to home</a>
+<hr>
+<a href="#">Edit this Post</a>
+
+<hr>
+
+<p>
+
+<hr>
+<h3>
+Post name : {{post_detail}} <br>
+Post content : {{post_detail.content}} <br>
+Created at : {{post_detail.created_at}} <br>
+Active  : {{post_detail.active}} <br>
+Auther Email : {{post_detail.auther_mail}} <br>
+Post type : {{post_detail.type}} <br>
+
+
+Post image <br>
+: <img src=" {{post_detail.image.url}} "> <br>
+
+
+
+
+</h3>
